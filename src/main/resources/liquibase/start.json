@@ -1,0 +1,30 @@
+{
+  "snapshot": {
+    "created": "2021-07-31T21:13:28.891",
+    "database": {
+      "productVersion": "8.0.20-11",
+      "shortName": "mysql",
+      "majorVersion": "8",
+      "minorVersion": "0",
+      "user": "remote_home@188.138.168.134",
+      "productName": "MySQL",
+      "url": "jdbc:mysql://91.193.182.157:3306"
+    },
+    "snapshotControl": {
+      "snapshotControl": {
+        "includedType": [
+          "liquibase.structure.core.Catalog",
+          "liquibase.structure.core.Column",
+          "liquibase.structure.core.ForeignKey",
+          "liquibase.structure.core.Index",
+          "liquibase.structure.core.PrimaryKey",
+          "liquibase.structure.core.Schema",
+          "liquibase.structure.core.Sequence",
+          "liquibase.structure.core.Table",
+          "liquibase.structure.core.UniqueConstraint",
+          "liquibase.structure.core.View"]
+        
+      }
+    }
+  }
+}

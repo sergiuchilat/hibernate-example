@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/employees")
 public class EmployeeController {
-    private EmployeeService employeeService;
+    private final EmployeeService employeeService;
 
     public EmployeeController(EmployeeService employeeService) {
         super();
@@ -21,7 +21,7 @@ public class EmployeeController {
 
     @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<Employee> save(@RequestBody Employee employee){
-        return new ResponseEntity<Employee>(employeeService.create(employee), HttpStatus.CREATED);
+        return new ResponseEntity<>(employeeService.create(employee), HttpStatus.CREATED);
     }
 
     @GetMapping()
@@ -31,17 +31,17 @@ public class EmployeeController {
 
     @GetMapping(path = "{id}")
     public ResponseEntity<Employee> get(@PathVariable Long id){
-        return new ResponseEntity<Employee>(employeeService.get(id), HttpStatus.OK);
+        return new ResponseEntity<>(employeeService.get(id), HttpStatus.OK);
     }
 
     @PutMapping(path = "{id}")
     public ResponseEntity<Employee> update(@RequestBody Employee employee, @PathVariable("id") Long id){
-        return new ResponseEntity<Employee>(employeeService.update(employee, id), HttpStatus.OK);
+        return new ResponseEntity<>(employeeService.update(employee, id), HttpStatus.OK);
     }
 
     @DeleteMapping(path = "{id}")
     public ResponseEntity<String> delete(@PathVariable Long id){
         employeeService.delete(id);
-        return new ResponseEntity<String>(id.toString(), HttpStatus.OK);
+        return new ResponseEntity<>(id.toString(), HttpStatus.OK);
     }
 }
